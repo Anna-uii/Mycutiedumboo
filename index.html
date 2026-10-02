@@ -1,91 +1,431 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For My Love 💙</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>For My Love 💙</title>
 
-    body {
-      margin: 0;
-      background: #000;
-      overflow: hidden;
-      font-family: Georgia, serif;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    .page {
-      position: fixed;
-      inset: 0;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      background: #000;
-      opacity: 0;
-      transform: scale(1.03);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  font-family: Georgia, serif;
+}
 
-    .page.active {
-      display: flex;
-      opacity: 1;
-      transform: scale(1);
-    }
+.page {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
 
-    .page img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+.page.active {
+  display: flex;
+}
 
-    .next {
-      position: absolute;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 13px 24px;
-      border: none;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.9);
-      color: #222;
-      font-size: 16px;
-      font-family: Georgia, serif;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      cursor: pointer;
-    }
+.page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-    .next:active {
-      transform: translateX(-50%) scale(0.95);
-    }
-  </style>
+.page video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: black;
+}
+
+button {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  border-radius: 30px;
+  padding: 14px 25px;
+  font-size: 16px;
+  background: white;
+  color: #263640;
+  z-index: 10;
+}
+
+.opening {
+  width: 100%;
+  height: 100%;
+  background: #dceaf2;
+  color: #263640;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.opening h1 {
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.opening p {
+  font-size: 19px;
+  margin-bottom: 30px;
+}
+
+.opening button {
+  position: static;
+  transform: none;
+}
+
+.final {
+  width: 100%;
+  height: 100%;
+  background: #f8e9e7;
+  color: #263640;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.final h1 {
+  font-size: 40px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- We will add your Canva pages here next -->
+<!-- OPENING -->
 
-  <div class="page active">
-    <div style="color:white; text-align:center; padding:30px;">
-      <h1>Happy Boyfriend's Day, my love. 💙</h1>
-      <p>I made something for you.</p>
-      <button class="next" onclick="nextPage()">Open your little surprise ♡</button>
-    </div>
+<div class="page active">
+
+  <div class="opening">
+
+    <h1>
+      Happy Boyfriend's Day,<br>
+      my love. 💙
+    </h1>
+
+    <p>
+      I made something for you.
+    </p>
+
+    <button onclick="start()">
+      Open your little surprise ♡
+    </button>
+
   </div>
 
-  <script>
-    let current = 0;
-    const pages = document.querySelectorAll('.page');
+</div>
 
-    function nextPage() {
-      if (current < pages.length - 1) {
-        pages[current].classList.remove('active');
-        current++;
-        pages[current].classList.add('active');
-      }
-    }
-  </script>
+
+<!-- 1 -->
+
+<div class="page">
+
+  <img src="1_20261002_172848_0000.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- VIDEO 1 -->
+
+<div class="page">
+
+  <video id="video1" controls playsinline>
+
+    <source
+      src="FormyKUSH_2026102_173455_0000.mp4"
+      type="video/mp4">
+
+  </video>
+
+  <button onclick="next()">Keep going ♡</button>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="page">
+
+  <img src="3_20261002_172848_0002.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="page">
+
+  <img src="4_20261002_172848_0003.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="page">
+
+  <img src="5_20261002_172848_0004.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="page">
+
+  <img src="6_20261002_172848_0005.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="page">
+
+  <img src="7_20261002_172848_0006.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="page">
+
+  <img src="8_20261002_172848_0007.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="page">
+
+  <img src="9_20261002_172848_0008.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="page">
+
+  <img src="10_20261002_172848_0009.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="page">
+
+  <img src="11_20261002_172848_0010.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="page">
+
+  <img src="12_20261002_172848_0011.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="page">
+
+  <img src="13_20261002_172848_0012.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="page">
+
+  <img src="14_20261002_172848_0013.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="page">
+
+  <img src="15_20261002_172848_0014.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="page">
+
+  <img src="16_20261002_172848_0015.png">
+
+  <button onclick="next()">Keep Pulling ♡</button>
+
+</div>
+
+
+<!-- VIDEO 2 -->
+
+<div class="page">
+
+  <video id="video2" controls playsinline>
+
+    <source
+      src="FormyKUSH_2026102_173609_0000.mp4"
+      type="video/mp4">
+
+  </video>
+
+  <button onclick="next()">One last thing ♡</button>
+
+</div>
+
+
+<!-- FINAL -->
+
+<div class="page">
+
+  <div class="final">
+
+    <h1>I love you. Always. 💙</h1>
+
+    <p>Happy Boyfriend's Day, my love.</p>
+
+  </div>
+
+</div>
+
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+
+  <source
+    src="Elliot James Reay - I Think They Call This Love ( Official Music Video) - Elliot James Reay (128k).mp3"
+    type="audio/mpeg">
+
+</audio>
+
+
+<script>
+
+let current = 0;
+
+const pages = document.querySelectorAll(".page");
+
+const music = document.getElementById("music");
+
+const video1 = document.getElementById("video1");
+
+const video2 = document.getElementById("video2");
+
+
+function start() {
+
+  music.volume = 0.5;
+
+  music.play().catch(function(){});
+
+  next();
+
+}
+
+
+function next() {
+
+  if (current >= pages.length - 1) {
+    return;
+  }
+
+  if (video1) {
+    video1.pause();
+  }
+
+  if (video2) {
+    video2.pause();
+  }
+
+  pages[current].classList.remove("active");
+
+  current++;
+
+  pages[current].classList.add("active");
+
+  if (pages[current].contains(video1)) {
+
+    music.pause();
+
+  }
+
+  if (pages[current].contains(video2)) {
+
+    music.pause();
+
+  }
+
+  if (
+    !pages[current].contains(video1) &&
+    !pages[current].contains(video2)
+  ) {
+
+    music.play().catch(function(){});
+
+  }
+
+}
+
+</script>
 
 </body>
-</html>
+  </html>
